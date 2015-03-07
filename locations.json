@@ -1,0 +1,326 @@
+{
+    "Centrum Medicover - Katowice Graniczna": {
+        "geocode": {
+            "geo": [
+                50.2458246, 
+                19.0377566346986
+            ], 
+            "address": "54, Graniczna, Dolina Trzech Staw\u00f3w, Osiedle Paderewskiego, Osiedle Paderewskiego-Muchowiec, Katowice, wojew\u00f3dztwo \u015bl\u0105skie, 40-511, Polska"
+        }, 
+        "address": "ul. Graniczna 54", 
+        "cityname": "Katowice", 
+        "zip_code": "40-018"
+    }, 
+    "Centrum Medicover Dla Dzieci - Gdynia": {
+        "geocode": {
+            "geo": [
+                54.5163779, 
+                18.5364972
+            ], 
+            "address": "Obro\u0144c\u00f3w Wybrze\u017ca, \u015ar\u00f3dmie\u015bcie, Gdynia, wojew\u00f3dztwo pomorskie, 81-364, Polska"
+        }, 
+        "address": "ul. Obro\u0144c\u00f3w Wybrze\u017ca 10/14", 
+        "cityname": "Gdynia", 
+        "zip_code": "81-397"
+    }, 
+    "Centrum Medicover - Bia\u0142ystok": {
+        "geocode": {
+            "geo": [
+                53.1248842, 
+                23.1523552619807
+            ], 
+            "address": "Qmedica - Kompleksowa Opieka Medyczna, 30, Jerzego Waszyngtona, Osiedle Tysi\u0105clecia, Piaski, Bia\u0142ystok, wojew\u00f3dztwo podlaskie, 15-274, Polska"
+        }, 
+        "address": "ul. Waszyngtona 30", 
+        "cityname": "Bia\u0142ystok", 
+        "zip_code": "15-274"
+    }, 
+    "Stomatologia Medicover - Atrium": {
+        "geocode": {
+            "geo": [
+                52.2376427, 
+                20.9955776
+            ], 
+            "address": "Medicover, 27, Aleja Jana Paw\u0142a II, Czyste, Wola, Warszawa, wojew\u00f3dztwo mazowieckie, 00-132, Polska"
+        }, 
+        "address": "Al. Jana Paw\u0142a II 27", 
+        "cityname": "Warszawa", 
+        "zip_code": "00-867"
+    }, 
+    "Centrum Medicover Pomorska - \u0141\u00f3d\u017a": {
+        "geocode": {
+            "geo": [
+                51.7801517, 
+                19.4835874
+            ], 
+            "address": "106, Pomorska, \u015ar\u00f3dmie\u015bcie-Wsch\u00f3d, \u0141\u00f3d\u017a-\u015ar\u00f3dmie\u015bcie, \u0141\u00f3d\u017a, wojew\u00f3dztwo \u0142\u00f3dzkie, 91-404, Polska"
+        }, 
+        "address": "ul. Pomorska 106", 
+        "cityname": "\u0141\u00f3d\u017a", 
+        "zip_code": "91-402"
+    }, 
+    "Centrum Medicover - Katowice-Bednorza": {
+        "geocode": null, 
+        "address": "ul. Ks. Bisk. Bednorza 2a", 
+        "cityname": "Katowice", 
+        "zip_code": "40-384"
+    }, 
+    "Centrum Medicover - Wilan\u00f3w": {
+        "geocode": {
+            "geo": [
+                52.154781, 
+                21.0783369
+            ], 
+            "address": "Apteka Medicopharma, 5, Aleja Rzeczypospolitej, Powsinek, Stary Wilan\u00f3w, Wilan\u00f3w, Warszawa, wojew\u00f3dztwo mazowieckie, 02-972, Polska"
+        }, 
+        "address": "al. Rzeczypospolitej 5", 
+        "cityname": "Warszawa", 
+        "zip_code": "02-972"
+    }, 
+    "Centrum Medicover - Atrium": {
+        "geocode": {
+            "geo": [
+                52.2376427, 
+                20.9955776
+            ], 
+            "address": "Medicover, 27, Aleja Jana Paw\u0142a II, Czyste, Wola, Warszawa, wojew\u00f3dztwo mazowieckie, 00-132, Polska"
+        }, 
+        "address": "Al.  Jana Paw\u0142a II 27", 
+        "cityname": "Warszawa", 
+        "zip_code": "00-867"
+    }, 
+    "Centrum Medicover - Tarchomin": {
+        "geocode": {
+            "geo": [
+                52.325996, 
+                20.9471744536534
+            ], 
+            "address": "4, Strumykowa, Tarchomin Ko\u015bcielny, Tarchomin, Bia\u0142o\u0142\u0119ka, Warszawa, wojew\u00f3dztwo mazowieckie, 03-134, Polska"
+        }, 
+        "address": "ul. Strumykowa 4", 
+        "cityname": "Warszawa", 
+        "zip_code": null
+    }, 
+    "Centrum Medicover - Pu\u0142awska": {
+        "geocode": {
+            "geo": [
+                52.1509674, 
+                21.016770158494
+            ], 
+            "address": "Medicover, 278, Pu\u0142awska, Stary Grab\u00f3w, Ursyn\u00f3w, Warszawa, wojew\u00f3dztwo mazowieckie, 02-769, Polska"
+        }, 
+        "address": "ul. Pu\u0142awska 278", 
+        "cityname": "Warszawa", 
+        "zip_code": "02-819"
+    }, 
+    "Centrum Medicover Pi\u0142sudskiego - \u0141\u00f3d\u017a": {
+        "geocode": null, 
+        "address": "Al. Marsza\u0142ka Pi\u0142sudskiego 3", 
+        "cityname": "\u0141\u00f3d\u017a", 
+        "zip_code": "90-368"
+    }, 
+    "Centrum Medicover - Szczecin": {
+        "geocode": {
+            "geo": [
+                53.4352028, 
+                14.5545645
+            ], 
+            "address": "Nordea, 26, Jacka Malczewskiego, Centrum, \u015ar\u00f3dmie\u015bcie, Szczecin, wojew\u00f3dztwo zachodniopomorskie, 71-612, Polska"
+        }, 
+        "address": "ul. Malczewskiego 26", 
+        "cityname": "Szczecin", 
+        "zip_code": "71-612"
+    }, 
+    "Centrum Medicover - Krak\u00f3w Podg\u00f3rska": {
+        "geocode": {
+            "geo": [
+                50.0533066, 
+                19.957649
+            ], 
+            "address": "Scanmed Multimedis, 36, Podg\u00f3rska, Grzeg\u00f3rzki, Krak\u00f3w, wojew\u00f3dztwo ma\u0142opolskie, 31-534, Polska"
+        }, 
+        "address": "Podg\u00f3rska 36", 
+        "cityname": "Krak\u00f3w", 
+        "zip_code": "31-536"
+    }, 
+    "Centrum Medicover - Praga Po\u0142udnie": {
+        "geocode": {
+            "geo": [
+                52.23469045, 
+                21.0837278578977
+            ], 
+            "address": "3, Poligonowa, Groch\u00f3w-Po\u0142udniowy, Groch\u00f3w, Praga-Po\u0142udnie, Warszawa, wojew\u00f3dztwo mazowieckie, 04-051, Polska"
+        }, 
+        "address": "ul. Poligonowa 3", 
+        "cityname": "Warszawa", 
+        "zip_code": "04-051"
+    }, 
+    "Centrum Medicover - Pozna\u0144 Plac Andersa": {
+        "geocode": {
+            "geo": [
+                53.586292, 
+                19.5665996
+            ], 
+            "address": "SKLEP MEDYCZNY POFAM-POZNA\u0143, 3, Genera\u0142a W\u0142adys\u0142awa Andersa, Gajerek, I\u0142awa, powiat i\u0142awski, wojew\u00f3dztwo warmi\u0144sko-mazurskie, 14-200, Polska"
+        }, 
+        "address": "Plac Andersa 5", 
+        "cityname": "Pozna\u0144", 
+        "zip_code": "61-894"
+    }, 
+    "Centrum Medicover - Katowice Chorzowska": {
+        "geocode": {
+            "geo": [
+                50.2652982, 
+                19.016925
+            ], 
+            "address": "Chorzowska 50, 50, Chorzowska, Osiedle Ducha, D\u0105b, Katowice, wojew\u00f3dztwo \u015bl\u0105skie, 40-116, Polska"
+        }, 
+        "address": "ul. Chorzowska 50", 
+        "cityname": "Katowice", 
+        "zip_code": "40-101"
+    }, 
+    "Centrum Medicover - Wo\u0142oska": {
+        "geocode": {
+            "geo": [
+                52.184544, 
+                21.003932
+            ], 
+            "address": "Medicover, 22, Wo\u0142oska, S\u0142u\u017cew, Wierzbno, Mokot\u00f3w, Warszawa, wojew\u00f3dztwo mazowieckie, 02-675, Polska"
+        }, 
+        "address": "ul. Wo\u0142oska 22", 
+        "cityname": "Warszawa", 
+        "zip_code": "02-675"
+    }, 
+    "Centrum Medicover - Inflancka": {
+        "geocode": {
+            "geo": [
+                52.25451535, 
+                20.9924876954953
+            ], 
+            "address": "5, Inflancka, I, Nowe Miasto, \u015ar\u00f3dmie\u015bcie, Warszawa, wojew\u00f3dztwo mazowieckie, 00-194, Polska"
+        }, 
+        "address": "ul. Inflancka 5", 
+        "cityname": "Warszawa", 
+        "zip_code": "00-189"
+    }, 
+    "Centrum Medicover - Krak\u00f3w Ruczaj": {
+        "geocode": {
+            "geo": [
+                50.0175591, 
+                19.8933062
+            ], 
+            "address": "Centrum Medicover - Krak\u00f3w Ruczaj, 37, Profesora Micha\u0142a Bobrzy\u0144skiego, Kobierzyn, D\u0119bniki, Krak\u00f3w, wojew\u00f3dztwo ma\u0142opolskie, 393, Polska"
+        }, 
+        "address": "ul. Bobrzy\u0144skiego 37", 
+        "cityname": "Krak\u00f3w", 
+        "zip_code": "30-348"
+    }, 
+    "Centrum Medicover - Pozna\u0144 Malta": {
+        "geocode": null, 
+        "address": "ul. Abpa. A. Baraniaka 88", 
+        "cityname": "Pozna\u0144", 
+        "zip_code": "61-131"
+    }, 
+    "Centrum Medicover - Bydgoszcz": {
+        "geocode": {
+            "geo": [
+                53.12873, 
+                18.0283
+            ], 
+            "address": "Apteka, 26, Aleja Powsta\u0144c\u00f3w Wielkopolskich, Bartodzieje Wielkie, Skrzetusko, Bydgoszcz, wojew\u00f3dztwo kujawsko-pomorskie, 85-089, Polska"
+        }, 
+        "address": "Al. Powsta\u0144c\u00f3w Wielkopolskich 26", 
+        "cityname": "Bydgoszcz", 
+        "zip_code": "85-090"
+    }, 
+    "Centrum Medicover - Jerozolimskie": {
+        "geocode": {
+            "geo": [
+                52.22243045, 
+                20.9778433653998
+            ], 
+            "address": "96, Aleje Jerozolimskie, Stara Ochota, Ochota, Warszawa, wojew\u00f3dztwo mazowieckie, 02-325, Polska"
+        }, 
+        "address": "Al. Jerozolimskie 96", 
+        "cityname": "Warszawa", 
+        "zip_code": "00-807"
+    }, 
+    "Centrum Medicover - Gliwice": {
+        "geocode": null, 
+        "address": "ul. Gruszczy\u0144skiego 2/4", 
+        "cityname": "Gliwice", 
+        "zip_code": "44-100"
+    }, 
+    "Centrum Medicover Globis - Wroc\u0142aw": {
+        "geocode": {
+            "geo": [
+                51.0987703, 
+                17.0259776
+            ], 
+            "address": "7a, Powsta\u0144c\u00f3w \u015al\u0105skich, Barbara, Powsta\u0144c\u00f3w \u015al\u0105skich, Osiedle Powsta\u0144c\u00f3w \u015al\u0105skich, Wroc\u0142aw, wojew\u00f3dztwo dolno\u015bl\u0105skie, 53-332, Polska"
+        }, 
+        "address": "ul. Powsta\u0144c\u00f3w \u015al\u0105skich 7a", 
+        "cityname": "Wroc\u0142aw", 
+        "zip_code": "53-332"
+    }, 
+    "Centrum Medicover - Grunwaldzka": {
+        "geocode": {
+            "geo": [
+                54.4025581, 
+                18.5705143
+            ], 
+            "address": "Medicover Grunwaldzka - Olivia, 472A, Aleja Grunwaldzka, Dw\u00f3r III, Oliwa, Gda\u0144sk, wojew\u00f3dztwo pomorskie, 80-315, Polska"
+        }, 
+        "address": "Aleja Grunwaldzka 472A", 
+        "cityname": "Gda\u0144sk", 
+        "zip_code": "80-309"
+    }, 
+    "Centrum Medicover - Bielsko-Bia\u0142a": {
+        "geocode": {
+            "geo": [
+                49.792275, 
+                19.0115406
+            ], 
+            "address": "Karpacka, Kamienica, Bielsko-Bia\u0142a, wojew\u00f3dztwo \u015bl\u0105skie, Polska"
+        }, 
+        "address": "ul. Karpacka 24", 
+        "cityname": "Bielsko-Bia\u0142a", 
+        "zip_code": "43-300"
+    }, 
+    "Centrum Medicover - Lublin": {
+        "geocode": {
+            "geo": [
+                51.2400487, 
+                22.5266075
+            ], 
+            "address": "Fresh Market, 4C, Konrada Wallenroda, Miasteczko Uniwersyteckie, Rury, Lublin, wojew\u00f3dztwo lubelskie, 20-607, Polska"
+        }, 
+        "address": "ul. Konrada Wallenroda 4c", 
+        "cityname": "Lublin", 
+        "zip_code": "20-607"
+    }, 
+    "Centrum Medicover Strzegomska - Wroc\u0142aw": {
+        "geocode": {
+            "geo": [
+                51.1130601, 
+                17.0002865
+            ], 
+            "address": "36, Strzegomska, Szczepin, Osiedle Szczepin, Wroc\u0142aw, wojew\u00f3dztwo dolno\u015bl\u0105skie, 53-611, Polska"
+        }, 
+        "address": "Strzegomska 36", 
+        "cityname": "Wroc\u0142aw", 
+        "zip_code": "53-611"
+    }, 
+    "Centrum Medicover - Krak\u00f3w Bora Komorowskiego": {
+        "geocode": null, 
+        "address": "ul. Bora Komorowskiego 25B", 
+        "cityname": "Krak\u00f3w", 
+        "zip_code": "31-476"
+    }, 
+    "Centrum Medicover - Gdynia Sea Towers": {
+        "geocode": null, 
+        "address": "ul. Hryniewickiego 6/4", 
+        "cityname": "Gdynia", 
+        "zip_code": "81-340"
+    }
+}
