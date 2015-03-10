@@ -1,0 +1,57 @@
+medicover
+===
+
+Medicover mobile app is useless. No reminders. No calendar integration. No location data.
+
+This script downloads your medical appointments from Medicover site, and exports them to your CalDAV server. All your appointments are matched with up-to-date Medicover locations paired with geographic coordinates (thanks OpenStreetMap!). So you can just open your calendar, click on your appointment, click on the location and navigate there.
+
+Very rough around edges (works for me (tm)). Quickly hacked together in one evening. Use at your own risk.
+
+# How to use
+
+## Set env vars:
+
+### MEDICOVER_USERNAME
+
+Your card number (or any other valid ID in your Medicover portal).
+
+### MEDICOVER_PASSWORD
+
+Password to your Medicover portal.
+
+### CALDAV_URL
+
+Address to your `CalDAV` server. (ownCloud, Google, etc.)
+
+This script will use *Medicover* calendar in your `CalDAV` server. Please create it first before use.
+
+## Command line usage
+
+1. Run `medicover.py` to extract your appointments. It will save them to `appointments.json`.
+2. Run `python export.py` to read `appointments.json` and send them to your `CalDAV` server.
+
+## Locations
+
+It is important that (if you do not use default `locations.json`) you should use `locations.py` script to extract new Medicover locations. If you care about your old data, you should check if Medicover location you used in the past still exists. If no, just add `"old location": null` to `locations.json`.
+
+This script fuzzy-matches API downloaded appointment address, to names located presented on the website. Fuzzy matching is implemented because data from API does not equal data found on the main website.
+
+## TODO
+
+- Foreign timezones support (`Europe/Warsaw` is hardcoded in the code as CalDAV needs timezone aware dates; Medicover API seems to use only localtime (again, it has assumed `Europe/Warsaw` for .PL))
+- Make it works on other Medicover portals (outside .PL)
+- One script instead of two (three)
+- Figure out scheduling (create new appointment straight in your special calendar), and cancellation (see rfc6638, it might be possible through some kind of simple web service that calls medicover api? does iOS support this?)
+- Sharing your calendar entries or something 
+- Update Medicover locations instead of overwrite to keep the database updated
+- Send notifications (email, sms) when new appointment is added to your calendar
+
+# Author
+
+Michał Papierski <michal@papierski.net>
+
+# Disclaimer
+
+Medicover is owned and managed by Medicover Holding S.A., a privately-held company headquartered in Luxemburg.
+
+I am not related with Medicover in any way.
