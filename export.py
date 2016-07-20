@@ -1,4 +1,5 @@
 # encoding: utf-8
+import argparse
 import os
 import requests
 import json
@@ -6,6 +7,7 @@ import datetime
 import warnings
 import functools
 import operator
+import sys
 from requests.packages.urllib3 import exceptions
 import pytz
 import dateutil.parser
@@ -30,7 +32,7 @@ def new_request(*args, **kwargs):
 requests.request = new_request
 
 ###
-url = os.environ['CALDAV_URL']
+url = os.environ.get('CALDAV_URL')
 
 now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc)
 
@@ -60,14 +62,26 @@ def get_location(req):
 		return locations[lookup_key]
 
 def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-i', metavar='FILE_NAME', help='Input JSON file with appointments', required=True)
+	parser.add_argument('-o', metavar='FILE_NAME', help='Output ICS file')
+	parser.add_argument('--caldav', metavar='CALDAV_URL', help='URL of the CALDAV server')
+	args = parser.parse_args()
+
+	if not args.o and not url:
+		print ('Provide -o command line argument for file output or CALDAV_URL environment variable ' +
+				'for CalDAV output')
+		parser.print_help()
+		sys.exit(1)
 
 	appointments = None
 
-	with open('appointments.json') as f:
+	with open(args.i) as f:
 		appointments = json.load(f)
 
 	# Generate vcal events from appointments
 	icalendars = []
+	all_events = Calendar()
 
 	for appointment in appointments:
 		cal = Calendar()
@@ -96,21 +110,27 @@ def main():
 			
 		cal.add_component(event)
 		icalendars.append(cal)
+		all_events.add_component(event)
 
-	#print cal.to_ical()
+	# Write calendar to file.
+	if args.o:
+		print 'Writing ' + args.o
+		output_file = open(args.o, 'w')
+		output_file.write(all_events.to_ical())
 
-	
-	client = caldav.DAVClient(url)
-	principal = client.principal()
-	calendars = principal.calendars()
+	# Write calendar to CalDAV.
+	if url:
+		client = caldav.DAVClient(url)
+		principal = client.principal()
+		calendars = principal.calendars()
 
-	for calendar in calendars:
-		name = calendar.get_properties([dav.DisplayName(),])['{DAV:}displayname']
-		if name == 'Medicover':
-			for cal in icalendars:
-				print cal.to_ical()
-				event = calendar.add_event(cal.to_ical())
-				print 'Event', event, 'created'
+		for calendar in calendars:
+			name = calendar.get_properties([dav.DisplayName(),])['{DAV:}displayname']
+			if name == 'Medicover':
+				for cal in icalendars:
+					print cal.to_ical()
+					event = calendar.add_event(cal.to_ical())
+					print 'Event', event, 'created'
 
 	#for appointment in appointments:
 		#print appointment['doctorName']
