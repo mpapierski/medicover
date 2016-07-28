@@ -47,6 +47,19 @@ Alternatively, you can use the `-o` command line argument to output the calendar
 Note that if you provide both the CALDAV_URL environment variable and the `-o` argument,
 the calendar will be sent to `CalDAV` and saved to a file.
 
+```
+usage: export.py [-h] -i FILE_NAME [-o FILE_NAME] [--caldav CALDAV_URL]
+                 [-p NAME]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i FILE_NAME          Input JSON file with appointments
+  -o FILE_NAME          Output ICS file
+  --caldav CALDAV_URL   URL of the CALDAV server
+  -p NAME, --person_name NAME
+                        Name to append to calendar entries
+```
+
 ## Locations
 
 It is important that (if you do not use default `locations.json`) you should use `locations.py` script to extract new Medicover locations. If you care about your old data, you should check if Medicover location you used in the past still exists. If no, just add `"old location": null` to `locations.json`.
