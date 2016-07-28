@@ -93,7 +93,7 @@ def main():
 		#event['methdo']
 		event['uid'] = '{0}@medicover.pl'.format(appointment['id'])
 		event['dtstart'] = vDatetime(local)
-		event['dtend'] = vDatetime(local + datetime.timedelta(hours=1))
+		event['dtend'] = vDatetime(local + datetime.timedelta(minutes=appointment['duration']))
 		event['dtstamp'] = vDatetime(now)
 		event['summary'] = vText(appointment['specializationName'])
 		event['description'] = vText(u'{0}, {1}'.format(
