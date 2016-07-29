@@ -5,6 +5,10 @@ Medicover mobile app is useless. No reminders. No calendar integration. No locat
 
 This script downloads your medical appointments from Medicover site, and exports them to your CalDAV server. All your appointments are matched with up-to-date Medicover locations paired with geographic coordinates (thanks OpenStreetMap!). So you can just open your calendar, click on your appointment, click on the location and navigate there.
 
+You can also write the appointments to an ICS file which can be imported to many calendar programs,
+including Google Calendar ([by uploading a file](https://support.google.com/calendar/answer/37118)
+or [by URL](https://support.google.com/calendar/answer/37100))
+
 Very rough around edges (works for me (tm)). Quickly hacked together in one evening. Use at your own risk.
 
 # How to use
@@ -25,10 +29,23 @@ Address to your `CalDAV` server. (ownCloud, Google, etc.)
 
 This script will use *Medicover* calendar in your `CalDAV` server. Please create it first before use.
 
+Alternatively, you can use the `-o` command line argument to output the calendar to a file.
+
 ## Command line usage
 
 1. Run `medicover.py` to extract your appointments. It will save them to `appointments.json`.
-2. Run `python export.py` to read `appointments.json` and send them to your `CalDAV` server.
+2. Export your appointments to one of the following targets:
+  * Send the appointments to your `CalDAV` server
+  ```
+  python export.py -i appointments.json
+  ```
+  * Store the appointments in an ICS file.
+  ```
+  python export.py -i appointments.json -o appointments.ics
+  ```
+
+Note that if you provide both the CALDAV_URL environment variable and the `-o` argument,
+the calendar will be sent to `CalDAV` and saved to a file.
 
 ## Locations
 
