@@ -1,31 +1,43 @@
+import json
 import os
 import requests
+import HTMLParser
 from bs4 import BeautifulSoup
-import json
 
 username = os.environ['MEDICOVER_USERNAME']
 password = os.environ['MEDICOVER_PASSWORD']
 
-headers = {'User-Agent': 'Mozilla/5.0'}
-payload = {
-	'userNameOrEmail': username,
-	'password': password,
-}
-
 session = requests.Session()
 
-# Get verification token
-r = session.get('https://mol.medicover.pl/')
+# Step 1: Open login page.
+r = session.get('https://mol.medicover.pl/Users/Account/LogOn')
+bs = BeautifulSoup(r.content)
+json_text = HTMLParser.HTMLParser().unescape(bs.select('#modelJson')[0].text)
+token = json.loads(json_text)['antiForgery']['value']
+
+# Step 2: Send login info.
+r = session.post(
+    r.url,
+    data={
+			'username': username,
+			'password': password,
+			'idsrv.xsrf': token,
+    })
 r.raise_for_status()
 bs = BeautifulSoup(r.content)
 
-verification_token = bs.select('input[name="__RequestVerificationToken"]')[0]['value']
+def getHiddenField(name):
+  return bs.select('input[name="%s"]' % name)[0]['value']
 
-r = session.post('https://mol.medicover.pl/Users/Account/LogOn?ReturnUrl=%2F',
+# Step 3: Forward auth info to main page.
+r = session.post(
+	'https://mol.medicover.pl/Medicover.OpenIdConnectAuthentication/Account/OAuthSignIn',
 	data={
-		'userNameOrEmail': username,
-		'password': password,
-		'__RequestVerificationToken': verification_token
+		'code': getHiddenField('code'),
+		'id_token': getHiddenField('id_token'),
+		'scope': getHiddenField('scope'),
+		'state': getHiddenField('state'),
+		'session_state': getHiddenField('session_state'),
 	})
 r.raise_for_status()
 
