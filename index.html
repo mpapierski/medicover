@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Medicover by mpapierski</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Medicover</h1>
+        <p>Your Medicover medical appointments delivered straight into your calendar</p>
+
+        <p class="view"><a href="https://github.com/mpapierski/medicover">View the Project on GitHub <small>mpapierski/medicover</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mpapierski/medicover/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mpapierski/medicover/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mpapierski/medicover">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="medicover" class="anchor" href="#medicover" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>medicover</h1>
+
+<p>Medicover mobile app is useless. No reminders. No calendar integration. No location data.</p>
+
+<p>This script downloads your medical appointments from Medicover site, and exports them to your CalDAV server. All your appointments are matched with up-to-date Medicover locations paired with geographic coordinates (thanks OpenStreetMap!). So you can just open your calendar, click on your appointment, click on the location and navigate there.</p>
+
+<p>You can also write the appointments to an ICS file which can be imported to many calendar programs,
+including Google Calendar (<a href="https://support.google.com/calendar/answer/37118">by uploading a file</a>
+or <a href="https://support.google.com/calendar/answer/37100">by URL</a>)</p>
+
+<p>Very rough around edges (works for me (tm)). Quickly hacked together in one evening. Use at your own risk.</p>
+
+<h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h1>
+
+<h2>
+<a id="set-env-vars" class="anchor" href="#set-env-vars" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set env vars:</h2>
+
+<h3>
+<a id="medicover_username" class="anchor" href="#medicover_username" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MEDICOVER_USERNAME</h3>
+
+<p>Your card number (or any other valid ID in your Medicover portal).</p>
+
+<h3>
+<a id="medicover_password" class="anchor" href="#medicover_password" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MEDICOVER_PASSWORD</h3>
+
+<p>Password to your Medicover portal.</p>
+
+<h3>
+<a id="caldav_url" class="anchor" href="#caldav_url" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CALDAV_URL</h3>
+
+<p>Address to your <code>CalDAV</code> server. (ownCloud, Google, etc.)</p>
+
+<p>This script will use <em>Medicover</em> calendar in your <code>CalDAV</code> server. Please create it first before use.</p>
+
+<p>Alternatively, you can use the <code>-o</code> command line argument to output the calendar to a file.</p>
+
+<h2>
+<a id="command-line-usage" class="anchor" href="#command-line-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command line usage</h2>
+
+<ol>
+<li>Run <code>medicover.py</code> to extract your appointments. It will save them to <code>appointments.json</code>.</li>
+<li>Export your appointments to one of the following targets:
+
+<ul>
+<li>Send the appointments to your <code>CalDAV</code> server</li>
+</ul>
+
+<pre><code>python export.py -i appointments.json
+</code></pre>
+
+<ul>
+<li>Store the appointments in an ICS file.</li>
+</ul>
+
+<pre><code>python export.py -i appointments.json -o appointments.ics
+</code></pre>
+</li>
+</ol>
+
+<p>Note that if you provide both the CALDAV_URL environment variable and the <code>-o</code> argument,
+the calendar will be sent to <code>CalDAV</code> and saved to a file.</p>
+
+<h2>
+<a id="locations" class="anchor" href="#locations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Locations</h2>
+
+<p>It is important that (if you do not use default <code>locations.json</code>) you should use <code>locations.py</code> script to extract new Medicover locations. If you care about your old data, you should check if Medicover location you used in the past still exists. If no, just add <code>"old location": null</code> to <code>locations.json</code>.</p>
+
+<p>This script fuzzy-matches API downloaded appointment address, to names located presented on the website. Fuzzy matching is implemented because data from API does not equal data found on the main website.</p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Foreign timezones support (<code>Europe/Warsaw</code> is hardcoded in the code as CalDAV needs timezone aware dates; Medicover API seems to use only localtime (again, it has assumed <code>Europe/Warsaw</code> for .PL))</li>
+<li>Make it works on other Medicover portals (outside .PL)</li>
+<li>One script instead of two (three)</li>
+<li>Figure out scheduling (create new appointment straight in your special calendar), and cancellation (see rfc6638, it might be possible through some kind of simple web service that calls medicover api? does iOS support this?)</li>
+<li>Sharing your calendar entries or something </li>
+<li>Update Medicover locations instead of overwrite to keep the database updated</li>
+<li>Send notifications (email, sms) when new appointment is added to your calendar</li>
+</ul>
+
+<h1>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h1>
+
+<p>Michał Papierski <a href="mailto:michal@papierski.net">michal@papierski.net</a></p>
+
+<h1>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Disclaimer</h1>
+
+<p>Medicover is owned and managed by Medicover Holding S.A., a privately-held company headquartered in Luxemburg.</p>
+
+<p>I am not related with Medicover in any way.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mpapierski">mpapierski</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
