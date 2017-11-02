@@ -47,19 +47,13 @@ page = 1
 while True:
 	pageSize = 12
 
-	r = session.get('https://mol.medicover.pl/api/MyVisits/SearchVisitsToView',
+	r = session.post('https://mol.medicover.pl/api/MyVisits/SearchVisitsToView',
 		headers={
 			'X-Requested-With': 'XMLHttpRequest'
 		},
-		params={
-			'appointmentType': None,
-			'clinicId': None,
-			'doctorId': None,
-			'regionId': None,
-			'specializationId': None,
-			'page': page,
-			'pageSize': pageSize,
-			'linkFactory': 'undefined'
+		data={
+			'Page': page,
+			'PageSize': pageSize,
 		})
 	r.raise_for_status()
 
