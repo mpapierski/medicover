@@ -66,6 +66,7 @@ def main():
 	parser.add_argument('-i', metavar='FILE_NAME', help='Input JSON file with appointments', required=True)
 	parser.add_argument('-o', metavar='FILE_NAME', help='Output ICS file')
 	parser.add_argument('--caldav', metavar='CALDAV_URL', help='URL of the CALDAV server')
+	parser.add_argument('-p', '--person_name', metavar='NAME', help='Name to append to calendar entries')
 	args = parser.parse_args()
 
 	if not args.o and not url:
@@ -96,6 +97,10 @@ def main():
 		event['dtend'] = vDatetime(local + datetime.timedelta(minutes=appointment['duration']))
 		event['dtstamp'] = vDatetime(now)
 		event['summary'] = vText(appointment['specializationName'])
+		summary = appointment['specializationName']
+		if args.person_name:
+			summary += u' – {0}'.format(args.person_name)
+		event['summary'] = vText(summary)
 		event['description'] = vText(u'{0}, {1}'.format(
 			appointment['specializationName'], appointment['doctorName']))
 		event['class'] = 'private'
